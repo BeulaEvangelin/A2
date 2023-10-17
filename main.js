@@ -7,3 +7,43 @@ let visitorData = [
     {month: "August", visitors: "1780"},
     {month: "September", visitors: "1950"}
   ];
+
+  buildTable(visitorData);
+
+  function buildTable(visitorData){
+    //const body = document.querySelector("body");
+    const table = document.createElement("table");
+
+    const thead = document.createElement("thead");
+    const tr = document.createElement("tr");
+
+    const thForMonth = document.createElement("th");
+    thForMonth.innerText = "Month";
+
+    const thForVisitors = document.createElement("th");
+    thForVisitors.innerText = "No. of Visitors"
+
+    tr.append(thForMonth, thForVisitors);
+
+    thead.appendChild(tr);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+
+    for (let i=0; i<visitorData.length; i++){
+
+        const tr = document.createElement("tr");
+
+        const tdForMonth = document.createElement("td");
+        tdForMonth.innerText = visitorData[i].month;
+        tr.appendChild(tdForMonth);
+
+        const tdForVisitors = document.createElement("td");
+        tdForVisitors.innerText = visitorData[i].visitors;
+        tr.appendChild(tdForVisitors);
+        tbody.appendChild(tr);
+
+    }
+    result.appendChild(table);
+    };
