@@ -48,22 +48,21 @@ let visitorData = [
     result.appendChild(table);
     };
 
-  //  const cookieBanner = document.querySelector("#cookieBanner");
-  //  const acceptCookiesLink = document.querySelector("#acceptCookies");
+    
+    const cookieBanner = document.querySelector("#cookieBanner");
+
+    const acceptCookiesLink = document.querySelector("#acceptCookies");
+    acceptCookiesLink.addEventListener('click', revoke);
+      function revoke() {
+      cookieBanner.innerHTML = '<p>Cookies were accepted.Would you like to revoke? <a id="revokeCookies" href="#">Revoke</a></p>';  
+    
+    
+    const revokeCookiesLink = document.querySelector("#revokeCookies");
+    revokeCookiesLink.addEventListener('click', accept) 
+     function accept(){
+     cookieBanner.innerHTML = '<p>We use cookies to improve your experience. <a id="acceptCookies" href="#">Accept Cookies</a></p>';
+     }}
   
-  //  acceptCookiesLink.addEventListener('click', function() {
-  //    cookieBanner.innerHTML = '<p>Cookies were accepted.Would you like to revoke? <a id="revokeCookies" href="#">Revoke</a></p>';
-  
-  //    const revokeCookiesLink = document.getElementByIdquerySelector("#revokeCookies");
-  //    revokeCookiesLink.addEventListener('click', function() {
-  //      cookieBanner.innerHTML = '<p>We use cookies to improve your experience. <a id="acceptCookies" href="#">Accept Cookies</a></p>';
-  
-  //      acceptCookiesLink = document.querySelector("#acceptCookies");
-  //      acceptCookiesLink.addEventListener('click', function() {
-  //        cookieBanner.innerHTML = '<p>Cookies were accepted.Would you like to revoke? <a id="revokeCookies" href="#">Revoke</a></p>';
-  //      });
-  //    });
-  //  });
 
 let highContrast = false;
 
@@ -75,18 +74,18 @@ function toggle() {
   const body = document.querySelector("body");
   if (!highContrast) {
     body.style.backgroundColor = "black";
-    body.style.color = "white";
-    body.style.padding = "20px";
-    body.style.lineHeight = "1.5";
-    body.style.letterSpacing = "1px";
+    body.style.color = "silver";
+    body.style.lineHeight = "2";
+    body.style.letterSpacing = "2px";
+    body.style.padding = "25px";
     highContrast = !highContrast;
     
   } else {
     body.style.backgroundColor = "white";
     body.style.color = "black";
-    body.style.padding = "10px";
-    body.style.lineHeight = "normal";
-    body.style.letterSpacing = "normal";
+    body.style.lineHeight = "1";
+    body.style.letterSpacing = ".75px";
+    body.style.padding = "0px";
     highContrast = !highContrast;
   }
 }
