@@ -47,3 +47,20 @@ let visitorData = [
     }
     result.appendChild(table);
     };
+
+    const cookieBanner = document.querySelector("#cookieBanner");
+    const acceptCookiesLink = document.querySelector("#acceptCookies");
+  
+    acceptCookiesLink.addEventListener('click', function() {
+      cookieBanner.innerHTML = '<p>Cookies were accepted.Would you like to revoke? <a id="revokeCookies" href="#">Revoke</a></p>';
+  
+      const revokeCookiesLink = document.getElementByIdquerySelector("#revokeCookies");
+      revokeCookiesLink.addEventListener('click', function() {
+        cookieBanner.innerHTML = '<p>We use cookies to improve your experience. <a id="acceptCookies" href="#">Accept Cookies</a></p>';
+  
+        acceptCookiesLink = document.querySelector("#acceptCookies");
+        acceptCookiesLink.addEventListener('click', function() {
+          cookieBanner.innerHTML = '<p>Cookies were accepted.Would you like to revoke? <a id="revokeCookies" href="#">Revoke</a></p>';
+        });
+      });
+    });
